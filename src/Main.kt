@@ -30,5 +30,9 @@ fun main() {
         }
         numBallots++
     }
-    println(numBallots)
+
+    // close ballet text file
+    ballotFile?.close()
+
+    println("\nTotal # of ballots: $numBallots\n")
 }
