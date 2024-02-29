@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc891c14-1353-46a0-92bf-0dbcb99ebef2" name="Changes" comment="close file, print total no. of ballots">
+    <list default="true" id="fc891c14-1353-46a0-92bf-0dbcb99ebef2" name="Changes" comment="print total no. of votes for candidate, empty and full ballots">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
     </list>
@@ -70,13 +70,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709227210045</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="calculate no. of full ballots">
+      <option name="closed" value="true" />
+      <created>1709228239879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709228239880</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add small ballot file, add user input and import text file" />
     <MESSAGE value="extract votes from ballot file" />
     <MESSAGE value="close file, print total no. of ballots" />
-    <option name="LAST_COMMIT_MESSAGE" value="close file, print total no. of ballots" />
+    <MESSAGE value="calculate no. of full ballots" />
+    <MESSAGE value="print total no. of votes for candidate, empty and full ballots" />
+    <option name="LAST_COMMIT_MESSAGE" value="print total no. of votes for candidate, empty and full ballots" />
   </component>
 </project>

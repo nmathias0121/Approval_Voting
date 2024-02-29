@@ -16,17 +16,17 @@ fun main() {
     var full = 0
 
     // extract votes out of ballot text file
-    var candidate = ballotFile?.readLine()
-    while (candidate != null) {
-        if ("none" in candidate) {
+    var candidates_selected_by_voter = ballotFile?.readLine()
+    while (candidates_selected_by_voter != null) {
+        if ("none" in candidates_selected_by_voter) {
             empty++
         } else {
-            candidate.split(" ").distinct().forEach { vote ->
+            candidates_selected_by_voter.split(" ").distinct().forEach { vote ->
                 votes[vote] = votes.getOrDefault(vote, 0) + 1
             }
         }
         if (ballotFile != null) {
-            candidate = ballotFile.readLine()
+            candidates_selected_by_voter = ballotFile.readLine()
         }
         numBallots++
     }
@@ -41,15 +41,30 @@ fun main() {
         java.io.File(fileName).bufferedReader()
     }
 
+    // get list of all candidates
     val voteKeys = votes.keys.toList()
 
-    var candidate2 = ballotFile2?.readLine()
-    while (candidate2 != null) {
-        if (candidate2.split(" ").sorted() == voteKeys.sorted()) {
+    var candidate_selected_by_voter_2 = ballotFile2?.readLine()
+    while (candidate_selected_by_voter_2 != null) {
+        if (candidate_selected_by_voter_2.split(" ").sorted() == voteKeys.sorted()) {
             full++
         }
-        candidate2 = ballotFile2?.readLine()
+        candidate_selected_by_voter_2 = ballotFile2?.readLine()
     }
 
     ballotFile2?.close()
+
+    // print number of votes
+    val voteItems = votes.toList().sortedByDescending { it.second }
+    var counter = 0
+
+    voteItems.forEach { (candidate, count) ->
+        if (counter == 0) println("$candidate: $count (winner)")
+        else println("$candidate: $count")
+        counter++
+    }
+
+    // print number of empty and full ballots
+    println("\nempty: $empty")
+    println("full: $full")
 }
