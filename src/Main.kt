@@ -35,4 +35,21 @@ fun main() {
     ballotFile?.close()
 
     println("\nTotal # of ballots: $numBallots\n")
+
+    // import ballot text file to determine number of "full" (voted all) ballots
+    val ballotFile2 = ballotFileName?.let { fileName ->
+        java.io.File(fileName).bufferedReader()
+    }
+
+    val voteKeys = votes.keys.toList()
+
+    var candidate2 = ballotFile2?.readLine()
+    while (candidate2 != null) {
+        if (candidate2.split(" ").sorted() == voteKeys.sorted()) {
+            full++
+        }
+        candidate2 = ballotFile2?.readLine()
+    }
+
+    ballotFile2?.close()
 }
