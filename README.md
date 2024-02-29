@@ -1,3 +1,5 @@
+# Approval Voting
+
 ## Introduction
 Approval voting is a kind of voting system where voters are able to approve any number of
 candidates. Each voter casts a ballot which consists of a pair of candidates that the voter
